@@ -10,6 +10,9 @@
 ##### **Selenium Grid – Overview: (Slide 4)**
 
 * Selenium Grid is used to run our tests on different OS/browsers in parallel. It's basically uses master-slaves (or hub-nodes) concept – where there is one master/hub and there are few slaves/nodes registered to the master/hub. When we send our tests to the master/hub for execution, based on the browser/OS requirements of the test, master will route the request to the appropriate nodes and get them executed. Thus it minimizes the overall execution time of the tests.
+* Here let me show you on what are my tests are related to and how are they designed as per Page Object Model pattern.
+* Show all the three classes under test.
+* automationpractice.xml and webappsecurity.xml
 
 ##### Selenium Grid- Setup Manually: (Slide 5)
 
@@ -20,6 +23,7 @@
   * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.0.0.69:4444/grid/register
 * Open another Command Prompt (bash3) and navigate to the selenium server file path and run below command.
   * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.0.0.69:4444/grid/register
+* mvn clean package -DskipTests
 * Navigate to target folder 
   * java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=firefox -DHUB_HOST=10.0.0.69 org.testng.TestNG ../automationpractice.xml
 
