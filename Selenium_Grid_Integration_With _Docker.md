@@ -20,9 +20,9 @@
 * Open Command Prompt(bash1) and navigate to the selenium server file path and run below command.
   * java -jar selenium-server-standalone-3.141.59.jar -role hub
 * Open another Command Prompt (bash2) and navigate to the selenium server file path and run below command.
-  * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.0.0.69:4444/grid/register
+  * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.226.79.79:4444/grid/register
 * Open another Command Prompt (bash3) and navigate to the selenium server file path and run below command.
-  * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.0.0.69:4444/grid/register
+  * java -Dwebdriver.gecko.driver="/Users/Arun/Nisum_Pluralsight_Trainings/Selenium_Docker_Framework_Presentation/SeleniumDockerFramework/src/test/resources/geckodriver" -jar selenium-server-standalone-3.141.59.jar -role node -hub http://10.226.79.79:4444/grid/register
 * mvn clean package -DskipTests
 * Navigate to target folder 
   * java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DBROWSER=firefox -DHUB_HOST=10.0.0.69 org.testng.TestNG ../automationpractice.xml
@@ -36,7 +36,7 @@
 * Setup Hub
 
   * ```bash
-    docker run -d -p 4444:4444 --name selenium-hub selenium/hub
+      docker run -d -p 4444:4444 --name selenium-hub selenium/hub
     ```
 
 * Setup nodes with Chrome & Firefox and register to the hub
@@ -64,6 +64,7 @@
 * Challenges:
   
   * Need to start/stop the containers one by one to setup the hub and nodes.
+  * docker-compose up -d --scale chrome=4 --scale firefox=5
 
 ##### **Selenium Grid Setup using Docker-Compose:**
 
@@ -141,3 +142,4 @@ We already simplified our selenium grid set up using docker, but there are few c
 
 
 
+​	
